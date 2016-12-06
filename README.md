@@ -5,7 +5,8 @@
 - codeception
 - php
 - php-mbstring
-- docker-compose 1.8+
+- docker => 1.11.2
+- docker-compose => 1.7.1
 
 ## Included
 
