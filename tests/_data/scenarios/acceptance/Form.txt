@@ -1,0 +1,8 @@
+I WANT TO PERFORM FORM ACTIONS AND SEE RESULT
+
+I am on page '/' 
+I fill field 'Name'," 'Miles' 
+I fill field 'user[email]','miles@davis.com' 
+I select option 'Gender','Male' 
+I click 'Update'
+

@@ -1,0 +1,13 @@
+I WANT TO LOGIN AND SEE THE PROFILE PAGE
+
+I am on page '/' 
+I fill field 'name'," 'Max Mustermann' 
+I fill field 'email'," 'mustermann@andrelademann.de' 
+I fill field 'password'," '12345' 
+I click 'Sign in' 
+I see current url equals '/profile.php' 
+I see 'Welcome Max Mustermann' 
+I see link 'Sign out' 
+I click 'Sign out' 
+I see current url equals '/index.php'
+

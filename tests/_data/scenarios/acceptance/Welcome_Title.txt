@@ -1,0 +1,6 @@
+I WANT TO THE TITLE ONE THE HOMEPAGE
+
+I am on page '/' 
+I see in title 'Welcome Codeception' 
+I don't see in title 'Register'
+
