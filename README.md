@@ -31,5 +31,6 @@ docker-compose -p grid scale chrome=${NODES} firefox=${NODES}
 
 # Next
 
+- Running parralel http://codeception.com/docs/12-ParallelExecution
 - Functional tests
 - Unit tests

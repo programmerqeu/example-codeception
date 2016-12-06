@@ -1,1 +1,6 @@
 tests/webdriver/WelcomeCept.php
+tests/typo/Typo3Cept.php
+tests/acceptance/FormCept.php
+tests/acceptance/LoginCept.php
+tests/acceptance/WelcomeCept.php
+tests/acceptance/WelcomeTitleCept.php
