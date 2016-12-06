@@ -1,0 +1,101 @@
+version: '2'
+
+services:
+  hub:
+    image: elgalu/selenium
+    ports:
+      - ${SELENIUM_HUB_PORT}:${SELENIUM_HUB_PORT}
+      - ${VNC_FROM_PORT}-${VNC_TO_PORT}:${VNC_FROM_PORT}-${VNC_TO_PORT}
+    environment:
+      - SELENIUM_HUB_PORT
+      - PICK_ALL_RANDMON_PORTS=true
+      - GRID=true
+      - CHROME=false
+      - FIREFOX=false
+      - RC_CHROME=false
+      - RC_FIREFOX=false
+
+  chrome:
+    image: elgalu/selenium
+    network_mode: "service:hub"
+    shm_size: 1g
+    mem_limit: 2g
+    memswap_limit: 4g
+    environment:
+      - SELENIUM_HUB_PORT
+      - VNC_FROM_PORT
+      - VNC_TO_PORT
+      - SCREEN_WIDTH=1300
+      - SCREEN_HEIGHT=999
+      - PICK_ALL_RANDMON_PORTS=true
+      - VIDEO
+      - GRID=false
+      - CHROME=true
+      - FIREFOX=false
+      - RC_CHROME=false
+      - RC_FIREFOX=false
+
+  firefox:
+    image: elgalu/selenium
+    network_mode: "service:hub"
+    mem_limit: 2g
+    memswap_limit: 4g
+    environment:
+      - SELENIUM_HUB_PORT
+      - VNC_FROM_PORT
+      - VNC_TO_PORT
+      - SCREEN_WIDTH=1300
+      - SCREEN_HEIGHT=999
+      - PICK_ALL_RANDMON_PORTS=true
+      - VIDEO
+      - GRID=false
+      - CHROME=false
+      - FIREFOX=true
+      - RC_CHROME=false
+      - RC_FIREFOX=false
+
+  rc_chrome:
+    image: elgalu/selenium
+    network_mode: "service:hub"
+    shm_size: 1g
+    mem_limit: 2g
+    memswap_limit: 4g
+    environment:
+      - SELENIUM_HUB_PORT
+      - VNC_FROM_PORT
+      - VNC_TO_PORT
+      - SCREEN_WIDTH=1300
+      - SCREEN_HEIGHT=999
+      - PICK_ALL_RANDMON_PORTS=true
+      - VIDEO
+      - GRID=false
+      - CHROME=false
+      - FIREFOX=false
+      - RC_CHROME=true
+      - RC_FIREFOX=false
+
+  rc_firefox:
+    image: elgalu/selenium
+    network_mode: "service:hub"
+    mem_limit: 2g
+    memswap_limit: 4g
+    environment:
+      - SELENIUM_HUB_PORT
+      - VNC_FROM_PORT
+      - VNC_TO_PORT
+      - SCREEN_WIDTH=1300
+      - SCREEN_HEIGHT=999
+      - PICK_ALL_RANDMON_PORTS=true
+      - VIDEO
+      - GRID=false
+      - CHROME=false
+      - FIREFOX=false
+      - RC_CHROME=false
+      - RC_FIREFOX=true
+
+  mock:
+    image: elgalu/google_adwords_mock
+    network_mode: "service:hub"
+    tty: true
+    environment:
+      - MOCK_SERVER_PORT=8080
