@@ -10,14 +10,15 @@
 ## Included
 
 - selenium server
+- chrome linux64 webdriver
 
-## Run the webserver
+## Run the tests
 
-``php -S localhost:8090``
+1. Starting the webserver ``php -S localhost:8090``
+- Run acceptance test ``codecept run acceptance``
+- With selenium server ``java -jar ./bin/selenium-server-standalone-3.0.1.jar``
 
-## Run acceptance test
-``codecept run acceptance``
+# Next
 
-### With selenium server
-
-``java -jar ./bin/selenium-server-standalone-3.0.1.jar``
+- Functional tests
+- Unit tests
