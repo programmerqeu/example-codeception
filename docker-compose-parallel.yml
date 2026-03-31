@@ -10,7 +10,7 @@ services:
       - ./tests:/tests
       - ./codeception.yml:/codeception.yml
   web:
-    image: php:7-apache
+    image: php:8-apache
     depends_on:
       - db
     volumes:
